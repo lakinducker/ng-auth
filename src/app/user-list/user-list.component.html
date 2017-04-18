@@ -1,0 +1,43 @@
+<div class='panel panel-primary' *ngIf='users' id="wrap" [@transition]='state'>
+    <div class='panel-heading'>
+        Vehicles
+    </div>
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input type='text' [(ngModel)]='listFilter' />
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <h3>Filtered by: {{listFilter}} </h3>
+            </div>
+        </div>
+        <div class='table-responsive'>
+            <table class='table'
+                   *ngIf='users && users.length'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Admin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let user of users | userFilter:listFilter'>
+                        <td>{{user.name}}</td>
+                        <td>{{user.password}}</td>
+                        <td><i *ngIf='user.admin' class="glyphicon glyphicon-check"></i></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="count" colspan="7">{{users.length}} total users</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </div>
+</div>
