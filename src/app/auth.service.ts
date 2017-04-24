@@ -57,11 +57,6 @@ export class AuthService {
       .subscribe();
     }
 
-    setUserAuction(id) {
-      console.log('setUserAuction this.currentUser', this.currentUser, id);
-      // this.currentUser.currentAuction = id;
-    }
-
     getUser() {
       console.log('getUser this.currentUser', this.currentUser);
       return this.currentUser;

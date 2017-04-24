@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
+import { AuthGuardService } from './auth-guard.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +32,7 @@ import { UserFilterPipe } from './user-filter.pipe';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ AuthService, UserService ],
+  providers: [ AuthService, AuthGuardService, UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

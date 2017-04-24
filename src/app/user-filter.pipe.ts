@@ -9,9 +9,8 @@ export class UserFilterPipe implements PipeTransform {
 
   transform(value: IUser[], filterBy: string): IUser[] {
         filterBy = filterBy ? filterBy.toLocaleLowerCase() : null;
-        return filterBy ? value.filter((vser: IUser) =>
-            (vser.name +
-             vser.password).toLocaleLowerCase().indexOf(filterBy) !== -1) : value;
+        return filterBy ? value.filter((user: IUser) =>
+            (user.name).toLocaleLowerCase().indexOf(filterBy) !== -1) : value;
   }
 
 }

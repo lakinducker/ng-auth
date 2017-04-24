@@ -2,11 +2,11 @@
     <div class='container-fluid'>
       <a class='navbar-brand'></a>
       <ul class='nav navbar-nav'>
-          <li routerLinkActive="active">
-          <a [routerLink]="['/user-list']">
-              <i class="glyphicon glyphicon-list"></i>
-              Users
-          </a>
+          <li  *ngIf="auth.isAuthenticated()" routerLinkActive="active">
+            <a [routerLink]="['/user-list']">
+                <i class="glyphicon glyphicon-list"></i>
+                Users
+            </a>
           </li>
           <li *ngIf="!auth.isAuthenticated()">
             <a [routerLink]="['/login']">Login</a>

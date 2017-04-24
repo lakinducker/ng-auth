@@ -1,6 +1,6 @@
 <div class='panel panel-primary' *ngIf='users' id="wrap" [@transition]='state'>
     <div class='panel-heading'>
-        Vehicles
+        Users
     </div>
     <div class='panel-body'>
         <div class='row'>
@@ -20,14 +20,12 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Password</th>
                         <th>Admin</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor='let user of users | userFilter:listFilter'>
                         <td>{{user.name}}</td>
-                        <td>{{user.password}}</td>
                         <td><i *ngIf='user.admin' class="glyphicon glyphicon-check"></i></td>
                     </tr>
                 </tbody>
